@@ -1,21 +1,33 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
-  </div>
+    <div id="app">
+        <transition name='fade'>
+            <router-view></router-view>
+        </transition>
+    </div>
 </template>
 
 <script>
-export default {
-  name: 'app',
-  mounted(){
-    window.lvshou={};
-  }
-}
+    import './config/rem.js'
+    export default {
+        name: 'app',
+        mounted() {
+            window.lvshou = {};
+        }
+    }
+
 </script>
 
-<style>
-html,body{
-  margin:0;
-}
+<style lang='scss'>
+    @import './assets/scss/extend';
+
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity .3s
+    }
+
+    .fade-enter,
+    .fade-leave-to{
+        opacity: 0
+    }
+
 </style>
