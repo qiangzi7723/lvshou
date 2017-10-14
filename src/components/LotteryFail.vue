@@ -1,7 +1,7 @@
 <template>
     <section id='lottery-fail'>
         <callbackComponent :title='title' :detail='detail' :tip='tip' :logo='logo' :btn='btn' v-on:callback='failCb'></callbackComponent>
-        <shareComponent></shareComponent>
+        <!-- <shareComponent></shareComponent> -->
     </section>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
     <div id="live">
-        <video src="http://192.168.6.201:8000/邢傲伟ID.mp4" id="video" x5-video-player-type="h5" webkit-playsinline="" x-webkit-airplay="true"
+        <video src="http://static.cdn.24haowan.com/cdn/leon/json/index.mp4" id="video" x5-video-player-type="h5" webkit-playsinline="" x-webkit-airplay="true"
             airplay="allow" x5-video-player-fullscreen="false" playsinline="" preload="auto" :poster="require('@/assets/imgs/start-example.jpg')"></video>
         <section id='live-wrap'>
             <div class='play-btn'>
@@ -119,6 +119,11 @@
                 this.touchBtn.addEventListener('touchend', () => {
                     this.stopEvent();
                 })
+                
+                this.video.addEventListener('ended',()=>{
+                    // 视频播放完毕 跳转到抽奖页面
+                    this.$router.push('Lottery');
+                })
 
             },
             playEvent() {
@@ -174,7 +179,8 @@
 
     #live-wrap {
         position: relative;
-        @include changeMode(dev); // @include changeMode(build);
+        // @include changeMode(dev); 
+        @include changeMode(build);
         .play-btn {
             width: tr(123);
             height: tr(123);
@@ -270,7 +276,7 @@
         top: 0;
         object-fit: cover;
         background-size: cover;
-        object-position: left top;
+        object-position: center center;
         transform-origin: 0px 0px 0px;
         transform: rotate(90deg);
     }

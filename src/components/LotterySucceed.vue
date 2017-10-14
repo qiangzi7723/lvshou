@@ -11,10 +11,10 @@
             return {
                 title: '获得奖品',
                 detail: '领取方式：点击下方"立即领取"按钮，进入下载APP页面。下载APP并进入APP领取即可领得奖品。',
-                describe:'ofo月卡',
+                describe:this.$route.query.name,
                 tip: '(每个手机号码每天可都有一次抽奖的机会)',
-                logo: require('@/assets/imgs/gift.png'),
-                btn: require('@/assets/imgs/lottery-succeed-btn.png')
+                logo: this.$route.query.url,
+                btn: require('@/assets/imgs/lottery-succeed-btn.png'),
             }
         },
         components: {
